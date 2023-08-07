@@ -1,38 +1,103 @@
-.App {
+body {
+  margin: 0;
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  margin: 0.5rem 0;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task-item.completed {
+  text-decoration: line-through;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.delete-button {
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.add-task-container,
+.tasks-list-container {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  margin: auto;
+}
+
+.add-task-container {
+  background-color: teal;
+}
+
+.tasks-list-container {
+  background-color: rgba(0, 128, 128, 0.609);
+}
+
+.add-task,
+.tasks-list {
+  width: 80%;
+  margin: auto;
+}
+
+.tasks-list-items {
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.add-task {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.add-task button {
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px 0;
+  transition: .5s all;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-task button:hover {
+  box-shadow: -2px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -2px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.add-task button:active {
+  transform: scale(0.9);
+}
+
+.add-task input {
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.tasks-list p {
+  font-size: 23px;
 }
